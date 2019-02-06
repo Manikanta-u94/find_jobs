@@ -15,8 +15,8 @@ class Users(models.Model):
 	password = models.CharField(max_length=100)
 	contact = models.IntegerField()
 	address = models.TextField()
-	question = models.ForeignKey(S_Question,on_delete=models.CASCADE)
-	answer = models.CharField(max_length=250,default='please answer')
+	question = models.ForeignKey(S_Question,on_delete=models.CASCADE,null= True,blank=True)
+	answer = models.CharField(max_length=250,default='please answer',null= True,blank=True)
 
 	def __str__(self):
 		return self.first_name

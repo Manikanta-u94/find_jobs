@@ -1,7 +1,10 @@
+from django import forms
 from .models import Users,S_Question
 
+
 class UsersSignupForm(forms.ModelForm):
-	confirm_password = forms.CharField(max_length=100)
+	confirm_password = forms.CharField(max_length=100,widget=forms.PasswordInput)
+	password = forms.CharField(max_length=100,widget=forms.PasswordInput)
 
 
 	class Meta:
